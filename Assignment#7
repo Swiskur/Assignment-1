@@ -1,0 +1,140 @@
+import math
+#1
+
+#a A definite loop has a certian number of executions within the code, whereas an indefinite loop does not have a specific number of executions and runs until the loop's requirements are met. They both run a number of executions, but one is stated before and the other is stated after.
+
+#b The for loop is an example of a definite loop and is used when the number of executions is already determined, whereas a while loop is an example of an indefinite loop which is used when the number of executions is unknown. They both execute the code, one of them has a defined range in for and while does not have a garunteed number of executions.
+
+
+#c A sentinel loop is a loop that handles input until a special value is encountered. An interactive loop allows portions of a program to be repeated. They both run the code that is inputed, however, sentinal loops continue until a certain number is reached. An interactive loop allows portions of code to be repeated, which can allow for a sentinal loop to work.
+
+
+#d  A sentinel loop is a loop that handles input until a special value is encountered. An end of file loop returns an empty string which is then used as a sentinal value. They are both used together to end the code. The sentinal however is used until a certain value is encountered and an end of file loop stops when it encounteres an empty line, which is why they are used together.
+
+
+
+#2
+
+#     a)
+#     not (P and Q)
+#
+#     P    Q    P and Q    not (P and Q) 
+#     ---------------------------------
+#     T    T       T             F       
+#     T    F       F             T       
+#     F    T       F             T       
+#     F    F       F             T       
+
+#     b)
+#    (not P) and Q
+#
+#     P    Q     not P    (not P) and Q 
+#     ---------------------------------
+#     T    T      F            F       
+#     T    F      F            F       
+#     F    T      T            T       
+#     F    F      T            F       
+
+#     c)
+#     (not P) or (not Q)
+#
+#     P    Q     not P       not Q       (not P) or (not Q) 
+#     -------------------------------------------------------
+#     T    T       F           F                 F
+#     T    F       F           T                 T
+#     F    T       T           F                 T
+#     F    F       T           T                 T
+
+#     d) 
+#     (P and Q) or R 
+#
+#     P   Q   R   (P and Q)   (P and Q) or R     
+#     ---------------------------------------
+#     T   T   T     T           T                     
+#     T   F   T     F           T                     
+#     F   T   T     F           T                     
+#     F   F   T     F           T                     
+#     F   T   F     F           F                     
+#     T   T   F     T           T                     
+#     T   F   F     F           F                     
+#     F   F   F     F           F                     
+#     
+
+#     e)
+
+#    (P or Q) and (Q or R)
+#
+#     P   Q   R   (P or Q)   (Q or R)       (P or Q) and (Q or R)
+#     --------------------------------------------------------
+#     T   T   T     T           T                     T
+#     T   F   T     T           T                     T
+#     F   T   T     T           T                     T
+#     F   F   T     F           T                     F
+#     F   T   F     T           T                     T
+#     T   T   F     T           T                     T
+#     T   F   F     T           F                     F
+#     F   F   F     F           F                     F
+#3
+
+#a
+n = eval(input("Enter a number: "))
+
+sum = 0
+
+for i in range(1,n+1):
+    sum  = sum+i
+
+print(sum)
+
+
+#c
+
+
+Sum = 0
+
+print("Enter numbers to find the sum, when done enter 999 or more. \n")
+for i in range(1, 1000):
+    number = int(input("Number %d = " %i))
+
+    if number >= 999:
+        break
+
+    Sum = Sum + number
+
+print("The Sum of Positive Numbers = ", Sum)
+    
+
+
+
+
+def main():
+    sequence = eval(input("Enter a number in the Fibonnaci sequence: "))
+    count = 0
+    x = 1
+    y = 0
+
+    while count < sequence:
+        count = count + 1
+        z = x + y
+        x = y
+        y = z
+    print(z)
+
+main()
+
+
+def syracuse_sequence(x):
+    if x % 2 == 0:
+        syracuse = x/2
+    elif x % 2 == 1:
+        syracuse = 3 * x + 1
+    return syracuse
+
+def main():
+    x = eval(input("Enter a number: "))
+    print(x)
+    while x > 1:
+        syracuse = syracuse_sequence(x)
+        x = syracuse
+        print(syracuse)
+main()
