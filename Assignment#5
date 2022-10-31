@@ -1,0 +1,151 @@
+#1
+
+def OldMacDonald():
+    print("Old MacDonald had a farm, Ee-igh, Ei-igh, Oh!")
+
+def animal(animal, noise):
+    print("And on this farm he had a", animal +", Ee-igh, Ee-igh, Oh!")
+    print("With a", noise  +",", noise, "here, and a", noise+",", noise, "there.")
+    print("Here a", noise+",","there a", noise + ",", "everywhere a", noise+",", noise+".")
+
+
+def main():
+    
+    OldMacDonald()
+    animal("cow", "moo")
+    OldMacDonald()
+    print()
+
+    
+    OldMacDonald()
+    animal("chicken", "chirp")
+    OldMacDonald()
+    print()
+
+    
+    OldMacDonald()
+    animal("dog", "bark")
+    OldMacDonald()
+    print()
+
+
+    OldMacDonald()
+    animal("pig", "oink")
+    OldMacDonald()
+    print()
+
+    
+    OldMacDonald()
+    animal("turkey", "gobble")
+    OldMacDonald()
+    print()
+main()
+
+
+#2
+
+def main():
+    a = int(input("Amount of numbers to averege: "))
+    x = int(input(" Enter: "))
+    for i in range (2, a+1):
+        y = int(input("Enter: "))
+        x = float(x)+float(y)
+    print("Your final average is: ", x / a)
+
+main()
+
+#3
+
+def sumList(numbers):
+    
+    y = 0
+
+    for x in range (len(numbers)):
+        
+        y = numbers[x] +  y
+    return(y)
+
+
+def main():
+    
+    list = [9,4,9,5]
+    
+    a = sumList(list)
+    
+    print("The sum of the list is: ", a)
+    
+main()
+
+#4
+
+
+from graphics import *
+import math
+
+def main():
+
+    win = GraphWin("Line Segment", 600, 600)
+    win.setCoords(-10, -10, 10, 10)
+
+    clickText = Text(Point(0, 8), "Click anywhere to create a line.")
+    clickText.draw(win)
+
+    point1 = win.getMouse()
+    x1 = point1.getX()
+    y1 = point1.getY()
+
+    point1Circ = Circle(Point(x1, y1), 0.2)
+    point1Circ.draw(win)
+
+    point2 = win.getMouse()
+    x2 = point2.getX()
+    y2 = point2.getY()
+
+    point2Circ = Circle(Point(x2, y2), 0.2)
+    point2Circ.draw(win)
+
+    inputLine = Line(Point(x1, y1), Point(x2, y2))
+    inputLine.draw(win)
+
+    xmid = (x1 + x2) / 2
+    ymid = (y1 + y2) / 2
+
+    midPoint = Circle(Point(xmid, ymid), 0.2)
+    midPoint.setOutline("cyan")
+    midPoint.setFill("cyan")
+    midPoint.draw(win)
+
+    dx = x2-x1
+    dy = y2-y1
+    slope = dy/dx 
+    length = math.sqrt((dx ** 2) + (dy ** 2))
+
+    slopeText = Text(Point(5, 5), "Slope = ")
+    slopeText.draw(win)
+
+    lengthText = Text(Point(5, 4), " Length = ")
+    lengthText.draw(win)
+
+    slopeOutput = Text(Point(7, 5), round(slope, 1))
+    slopeOutput.setSize(10)
+    slopeOutput.draw(win)
+
+    lengthOutput = Text(Point(7, 4), round(length, 1))
+    lengthOutput.setSize(10)
+    lengthOutput.draw(win)
+   
+
+    win.getMouse()
+    win.close()
+
+main()
+
+#5  
+
+string = int(input("Enter amount of strings:"))
+list = list()
+for i in range(string):
+    user = input("Enter value:".format(i))
+    list.append(user)
+print("List :", list)
+
