@@ -1,0 +1,140 @@
+
+#1
+
+s1 = "spam"
+s2 = "ni!"
+
+#c
+
+s1[1]
+
+#The output is 'p'
+
+#e
+
+s1[2]+s2[:2]
+
+#The output is 'ani'
+
+#g
+s1.upper()
+
+#The output is 'SPAM'
+
+#2
+
+#a
+
+s2.upper()[:-1]
+
+#Output is "NI"
+
+#d
+s1
+
+#The output is spam
+
+
+#e
+
+print([s1[0:2], s1 [3]])
+
+#This outputs ['sp','m']
+
+#3
+
+#b
+for w in "Now is the winter of our discontent...".split():
+     print(w)
+#The output is: Now
+#is
+#the
+#winter
+#of
+#our
+#discontent...
+
+#c
+
+for w in "Mississippi".split("i"):
+    print(w, end=" ")
+
+
+#The output is: M ss ss pp
+
+#e
+
+msg = ""
+for ch in "secret":
+    msg=msg + chr(ord(ch)+1)
+print(msg)
+
+#The output is: tfdsfu
+
+#4
+for i in range(600):
+      print("F", end ="")
+for i in range(200):
+     print("D", end="")
+for i in range(200):
+     print("C", end="")
+for i in range(200):
+     print("B", end="")
+for i in range(200):
+     print("A", end="")
+
+
+#5
+
+def main():
+    for i in range (1):
+        score = (eval(input("Enter an Exam Score: /100")))
+
+        grade = []
+        for i in range(0, 60):
+            grade.append("F")
+        for i in range(60, 70):
+            grade.append("D")
+        for i in range(70, 80):
+            grade.append("C")
+        for i in range(80, 90):
+            grade.append("B")
+        for i in range(90, 101):
+            grade.append("A")
+
+        print(grade[score])
+
+main()
+
+#6
+
+def main():
+    
+    title = input("Acronym: \n")
+    
+    phrase = []
+
+    for i in title.split():
+     
+        a = i[0].capitalize()
+        phrase.append(a)
+
+    acronym = "".join(phrase)
+    print(acronym)
+
+main()
+
+#7
+
+def main():
+    name = input("Enter your name:  \n")
+
+    name = name.lower()
+
+    a = 0
+    for i in name:
+        a = int(ord(i)) + a - 96
+
+    print("Numeric Value of your name: {0}".format(a))
+
+main()
