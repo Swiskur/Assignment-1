@@ -1,0 +1,43 @@
+2.
+a. print("Hello, world!")
+print("Hello", "world!")
+#They are different because (a) has an apostrophy between Hello and world where (b) does not have an aposhtrophy because the quotation marks are closed after each word making them their own words.
+b. print(3)
+print(3.0)
+#They are different because (c) is just 3 and (d) adds the 3.0 that is in the print.
+c. print(2+3)
+print(2.0+3.0)
+print("2"+"3")
+#They are different because (e) equals 5, whereas (f) equals 5.0 as it added for the .0 in the print and (g) equals 23 because the print closed the quotations arount "2" and "3" while putting a + in between the quotations to show 2 before 3 and they combine for 23.
+d. print(2*3)
+print(2**3)
+#They are different because (i) equals 6 and (j) equals 8. This is because (i) is just 2*3 where (j) is 2**3 is multiplying 2, 3 times, which is the same as 2*2*2.
+e. print(7/3)
+print(2//3)
+#They are different because (k) is 7 divided by 3 which is 2.3 where 2//3 equals 0 because it divides 2/3 and rounds down the answer to give a whole number.
+
+# File: Homework#1Problem3.py 
+ 
+n=int(input("How many numbers should I print?"))
+for i in range (n):
+    print(i)
+
+km= 3
+
+miles =(km * 0.62)
+
+print("%.2f Km = %.2f Miles" %(km,miles))
+
+
+P= 10000
+r= 0.08
+n= 12
+
+
+t= int(input("How many years will the money be compounded for?"))
+
+final = P * ( ((1+ (r/n)) **(n * t)) )
+
+print ("The final amount after", t, "years is", final)
+
+
