@@ -1,0 +1,226 @@
+#1
+x = eval(input("Enter the amount of numbers you would like: "))
+sum = 0
+for i in range(x):
+    y = eval(input("Enter a number: "))
+    sum = y + sum
+
+print("Sum of the above numbers is: ", sum)
+
+#2
+
+y = eval(input("How many numbers? "))
+x = 0
+n = 0
+while x < y:
+    try:
+        n += int(input('Enter a number: '))
+    except ValueError:
+        print("Invalid Input.")
+
+    else:
+       x+= 1
+print("The average of", y,"is", n/y)
+
+#3
+from graphics import*
+win = GraphWin()
+
+#a
+
+win = GraphWin()
+
+p = Point(130,130)
+
+p.draw(win)
+
+#a produces a point on the graphics window which represents the point in the code. It is a small pixel dot just to the right and below the middle of the graphics window
+
+
+#b
+c = Circle(Point(30,40), 25)
+c.setFill("blue")
+c.setOutline("red")
+
+#b produces a large circle in the top left corner that is filled in with blue and outlined in red. The point is larger because of the 25 given to the circle to give it a circumference.
+
+
+#c
+r = Rectangle(Point(20,20), Point(40,40))
+r.setFill(color_rgb(0,255,150))
+r.setWidth(3)
+
+#c produces a green rectangle that is larger than th point in a and smaller than the circle in b in the top left corner of the graphics window
+
+#d
+
+l = Line(Point(100,100), Point(100,200))
+l.setOutline("red4")
+l.setArrow("first")
+
+#d produces a red arrow that comes from the bottom of the page and extends to the middle while pointing up
+
+
+#e
+o = Oval(Point(50,50), Point(60,100))
+
+#e produces a large oval in the upper left corner of the graphics window. The oval is not filled in and has no outline or color.
+
+#f
+Shape= Polygon(Point(5,5), Point(10,10), Point(5,10), Point(10,5))
+Shape.setFill("orange")
+
+#f created a small polygon that somewhat looks like an X with the insides filled with orange in the top right corner. 
+
+#g
+t = Text(Point(100,100), "Hello World!")
+t.setFace("courier")
+t.setSize(16)
+t.setStyle("italic")
+             
+#g produces "Hello World" in a large courier font that is italicized in the middle of the graphics window.
+
+#4
+
+shape = Circle (Point(50,50), 20)
+shape.setOutline("red")
+shape.setFill("red")
+shape.draw(win)
+for i in range(10):
+    p = win.getMouse()
+    c = shape.getCenter
+    dx = p.getX() - c.getX()
+    dy = p.getY() - c.getY()
+    shape.move(dx,dy)
+
+    #It shows a red filled and outlined red circle that is placed on the left side of the window. The x and y are meant to be able to move the circle.
+    
+
+#5
+
+from graphics import*
+
+win = GraphWin('Archery Target', 500,500)
+center = Point(250,250)
+
+white = Circle(center, 200)
+white.setFill("white")
+white.draw(win)
+
+blue = Circle(center,150)
+blue.setFill("blue")
+blue.draw(win)
+
+red = Circle(center, 100)
+red.setFill("red")
+red.draw(win)
+
+yellow = Circle(center, 50)
+yellow.setFill("yellow")
+yellow.draw(win)
+
+win.getMouse()
+
+#6
+
+from graphics import*
+
+
+def main():
+    
+    win = GraphWin("Face",300,300)
+    face = Oval(Point(75,50),Point(215,240))
+    face.setFill("yellow")
+    face.draw(win)
+
+    lefteye = Circle(Point(120,120),10)
+    lefteye.setFill("white")
+    lefteye.draw(win)
+    leb = Circle(Point(120,120),2)
+    leb.setFill("blue")
+    leb.draw(win)
+
+    righteye = Circle(Point(180,120),10)
+    righteye.setFill("white")
+    righteye.draw(win)
+    reb = Circle(Point(180,120),2)
+    reb.setFill("blue")
+    reb.draw(win)
+
+    mouth = Oval(Point(110,185),Point(170,215))
+    mouth.setFill("black")
+    mouth.draw(win)
+
+    nose = Oval(Point(135,130),Point(155,170))
+    nose.setFill("yellow")
+    nose.draw(win)
+
+    win.getMouse() 
+    win.close()
+
+main()
+
+#7
+
+from graphics import *
+import math
+
+def main():
+
+    win = GraphWin("Line Segment", 600, 600)
+    win.setCoords(-10, -10, 10, 10)
+
+    clickText = Text(Point(0, 8), "Click anywhere to create a line.")
+    clickText.draw(win)
+
+    point1 = win.getMouse()
+    x1 = point1.getX()
+    y1 = point1.getY()
+
+    point1Circ = Circle(Point(x1, y1), 0.2)
+    point1Circ.draw(win)
+
+    point2 = win.getMouse()
+    x2 = point2.getX()
+    y2 = point2.getY()
+
+    point2Circ = Circle(Point(x2, y2), 0.2)
+    point2Circ.draw(win)
+
+    inputLine = Line(Point(x1, y1), Point(x2, y2))
+    inputLine.draw(win)
+
+    xmid = (x1 + x2) / 2
+    ymid = (y1 + y2) / 2
+
+    midPoint = Circle(Point(xmid, ymid), 0.2)
+    midPoint.setOutline("cyan")
+    midPoint.setFill("cyan")
+    midPoint.draw(win)
+
+    dx = x2-x1
+    dy = y2-y1
+    slope = dy/dx 
+    length = math.sqrt((dx ** 2) + (dy ** 2))
+
+    slopeText = Text(Point(5, 5), "Slope = ")
+    slopeText.draw(win)
+
+    lengthText = Text(Point(5, 4), " Length = ")
+    lengthText.draw(win)
+
+    slopeOutput = Text(Point(7, 5), round(slope, 1))
+    slopeOutput.setSize(10)
+    slopeOutput.draw(win)
+
+    lengthOutput = Text(Point(7, 4), round(length, 1))
+    lengthOutput.setSize(10)
+    lengthOutput.draw(win)
+   
+
+    win.getMouse()
+    win.close()
+
+main()
+
+
